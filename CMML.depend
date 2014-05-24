@@ -68,3 +68,89 @@
 	"utils.h"
 	"zlib.h"
 
+1400911623 source:c:\users\brandon\desktop\cmml\src\bitmap.c
+	"bitmap.h"
+
+1400914514 c:\users\brandon\desktop\cmml\include\bitmap.h
+	<stdlib.h>
+	<stdio.h>
+	<stdbool.h>
+	<string.h>
+	"color.h"
+	"utils.h"
+	"zlib.h"
+
+1400915828 c:\users\brandon\desktop\cmml\include\color.h
+	<stdint.h>
+	<math.h>
+
+1400911107 c:\users\brandon\desktop\cmml\include\utils.h
+	<stdint.h>
+	<stdbool.h>
+	<string.h>
+	<stdlib.h>
+
+1400915908 source:c:\users\brandon\desktop\cmml\src\color.c
+	"color.h"
+
+1400911107 source:c:\users\brandon\desktop\cmml\src\dtm.c
+	"dtm.h"
+
+1400911107 c:\users\brandon\desktop\cmml\include\dtm.h
+	<stdlib.h>
+	<string.h>
+	<stdint.h>
+	<stdbool.h>
+	"zlib.h"
+	"color.h"
+
+1400911107 source:c:\users\brandon\desktop\cmml\src\eios.c
+	"eios.h"
+
+1400911107 c:\users\brandon\desktop\cmml\include\eios.h
+	<stdint.h>
+	<stdbool.h>
+	<string.h>
+	"dl.h"
+	"color.h"
+
+1400911107 c:\users\brandon\desktop\cmml\include\dl.h
+	<windows.h>
+	<dlfcn.h>
+
+1400911107 source:c:\users\brandon\desktop\cmml\src\target.c
+	"target.h"
+
+1400911107 c:\users\brandon\desktop\cmml\include\target.h
+	<stdint.h>
+	<stdbool.h>
+	<string.h>
+	<stddef.h>
+	"color.h"
+	"eios.h"
+	"input.h"
+
+1400911107 c:\users\brandon\desktop\cmml\include\input.h
+
+1400911107 source:c:\users\brandon\desktop\cmml\src\utils.c
+	"utils.h"
+
+1400924172 source:c:\users\brandon\desktop\cmml\src\finder.c
+	"finder.h"
+
+1400978286 c:\users\brandon\desktop\cmml\include\finder.h
+	<stdint.h>
+	"bitmap.h"
+	"color.h"
+
+1400975656 source:c:\users\brandon\desktop\cmml\src\client.c
+	"client.h"
+
+1400975707 c:\users\brandon\desktop\cmml\include\client.h
+	<stdbool.h>
+	"iomanager.h"
+	"finder.h"
+
+1400975287 c:\users\brandon\desktop\cmml\include\iomanager.h
+	"target.h"
+

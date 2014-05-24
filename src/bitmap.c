@@ -342,9 +342,9 @@ bool savebmp(bitmap *bmp, const char *filepath, uint16_t bpp)
         return false;
 
 #if defined _WIN32 || defined _WIN64
-    FILE *file = fopen(filepath, "w");
+    FILE *file = fopen(filepath, "wb");
 #else
-    int file = fopen(filepath, "w");
+    int file = fopen(filepath, "wb");
 #endif
 
     if (file)

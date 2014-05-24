@@ -1,5 +1,18 @@
 #include "color.h"
 
+static uint8_t __hsl_to_rgb_helper(float i, float j, float h)
+{
+    if (h < 0.0f) h += 1.0f;
+    if (h > 1.0f) h -= 1.0f;
+    if (h < (1.0f / 6.0f))
+        return (uint8_t)round((i + (j - i) * 6.0f * h) * 255.0f);
+    else if (h < (1.0f / 2.0f))
+        return (uint8_t)round(j * 255.0f);
+    else if (h < (2.0f / 3.0f))
+        return (uint8_t)round((i + (j - i) * 6.0f * ((2.0f / 3.0f) - h)) * 255.0f);
+    else
+        return (uint8_t)round(i * 255.0f);
+}
 
 xyz rgb_to_xyz(rgb32 *px)
 {
@@ -70,20 +83,6 @@ hsl rgb_to_hsl(rgb32 *px)
     return res;
 }
 
-uint8_t hsl_to_rgb_helper(float i, float j, float h)
-{
-    if (h < 0.0f) h += 1.0f;
-    if (h > 1.0f) h -= 1.0f;
-    if (h < (1.0f / 6.0f))
-        return (uint8_t)round((i + (j - i) * 6.0f * h) * 255.0f);
-    else if (h < (1.0f / 2.0f))
-        return (uint8_t)round(j * 255.0f);
-    else if (h < (2.0f / 3.0f))
-        return (uint8_t)round((i + (j - i) * 6.0f * ((2.0f / 3.0f) - h)) * 255.0f);
-    else
-        return (uint8_t)round(i * 255.0f);
-}
-
 rgb32 hsl_to_rgb(hsl *px)
 {
     rgb32 res;
@@ -100,9 +99,9 @@ rgb32 hsl_to_rgb(hsl *px)
         float j = (l < 0.5f) ? (l * (1.0f + l)) : ((l + s) - (s * l));
         float i = 2.0f * l - j;
 
-        res.r = hsl_to_rgb_helper(i, j, h + (1.0f / 3.0f));
-        res.g = hsl_to_rgb_helper(i, j, h);
-        res.b = hsl_to_rgb_helper(i, j, h - (1.0f / 3.0f));
+        res.r = __hsl_to_rgb_helper(i, j, h + (1.0f / 3.0f));
+        res.g = __hsl_to_rgb_helper(i, j, h);
+        res.b = __hsl_to_rgb_helper(i, j, h - (1.0f / 3.0f));
     }
     return res;
 }
